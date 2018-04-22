@@ -9,16 +9,17 @@ Table of Contents:
     :depth: 1
     :backlinks: none
 
-========
-Synopsis
-========
-CS 4604 project 3 - embed DB as web interface. 
+=====
+Title
+=====
+CS 4604 project 3 
 
 ======================
 Installation and Usage
 ======================
 How to access database:: 
- ssh <user>@cs4604.vt.edu
+
+ ssh <user>@cs4604.vt.edu;
  psql -U "young sailors" -d "young sailors"
 
 =====
