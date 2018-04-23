@@ -4,16 +4,12 @@
 
 //check if admin or guest to determine connect string
 
-$database = 'Young Sailors';
-$user = 'Young Sailors';
-$password = '123456';
+$database = "dbname='young sailors'";
+$user = "user='young sailors'";
+$password = "password=123456";
 
 
-$connectString = ' dbname=' . $database . 
-    ' user=' . $user . ' password=' . $password;
-
-
-$link = pg_connect ($connectString);
+$link = pg_connect ("$database $user $password");
 if (!$link)
 {
     die('Error: Could not connect: ' . pg_last_error());
@@ -21,8 +17,10 @@ if (!$link)
 
 $query = "SELECT P.name,  count(P.name)
 FROM ps_administered_by PS, vs_administered_by VS, person P
-WHERE P.pid == PS.hid OR P.pid == VS.hid
+WHERE P.pid = PS.hid OR P.pid = VS.pid
 GROUP BY P.name;";
+
+$result = pg_query($query) or die('query failed:'.pg_last_error());
 
 $i = 0;
 echo '<html><body><table><tr>';
