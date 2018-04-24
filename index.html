@@ -33,35 +33,32 @@
          <ul>
             <li>
                <B>Queries:</B>
-               <BR> In the following, substitute the english query description for a query to your database. You can use any query you like (including the ones we have given), <strong>as long as the query does not take more than 10
-               seconds to execute</strong>. This constraint is to prevent overloading the database with expensive queries that run for minutes or hours. You can use the
-               <kbd>LIMIT</kbd> keyword to list a small number of tuples, say 10-20, that satisfy the query. Again, clicking a link on the query name should execute the appropriate SQL query and list the tuples that are the answer to that particular query. Make sure your output is neatly ordered and column names and types are evident. The output should appear on a separate page.
-               <BR>
+              
                <BR>
                <ol>
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query1</a>: &lt;Prompt for configuration item name/id and show everything that depends upon it.&gt;
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query2</a>: &lt;Prompt for configuration item name/id and show everything that it depends upon. &gt;
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query3</a>: &lt;List the date, configuration item and summary of all recent changes ordered by date. &gt;
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query4</a>: &lt;Prompt for configuration item name/id and system administrator name/id and update the configuration item to set its system administrator to the one given. &gt;
+                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query 1: </a>Prompt for configuration item name/id and show everything that depends upon it.</li>
+                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query 2: </a>Prompt for configuration item name/id and show everything that it depends upon.</li>
+                  
+                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query 4: </a>Prompt for configuration item name/id and system administrator name/id and update the configuration item to set its system administrator to the one given.</li>
                </ol>
                <BR>
                <hr>
             </li>
             <li>
                <h2>Ad-hoc Query:</h2>
-			<br>
-			<form class="form-inline" method=post action="adhoc.php">
-			  <div class="form-group">
-				<label for="query">
-				  <strong>Please enter your query here:</strong>
-				</label>
-				&nbsp;
-				<input class="form-control" type=text name="query" id="query">
-				&nbsp;
-				<input class="btn btn-primary" type=reset value="clear">
-				<input class="btn btn-primary" type=submit value="submit">
-			  </div>
-			</form>
+            <br>
+            <form class="form-inline" method=post action="adhoc.php">
+              <div class="form-group">
+                <label for="query">
+                  <strong>Please enter your query here:</strong>
+                </label>
+                &nbsp;
+                <input class="form-control" type=text name="query" id="query">
+                &nbsp;
+                <input class="btn btn-primary" type=reset value="clear">
+                <input class="btn btn-primary" type=submit value="submit">
+              </div>
+            </form>
             <BR>
             <li>
                <B>Relations:</B>
@@ -69,12 +66,12 @@
                <BR>
                <BR>
                <ol>
-                  <li><a href="query1.php">Relation1: List the system administrators and the number of configuration items they administer.
-                     </a>
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Relation2: It is often the case that a system administrator will need to schedule maintenance for a server. As part of the scheduling process, s/he will need to know what other systems might be impacted. For a given configuration item (named 'super-server'), list all dependent configuration items.</a>
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Relation3: If an event occurs impacting the availability of a system, a system administrator will want to know what has changed both on that system and on other systems that support his/her system. For a given configuration item (named 'down-app'), list all configuration items that 'down-app' depends upon along with the last time they were changed and who the system administrator is for those configuration items.
-                     </a>
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">List configuration items by type.</a>
+                   <li><a href="relation.php?title=Relation1">Relation1:</a> List the system administrators and the number of configuration items they administer.</li>
+                    <li><a href="relation.php?title=Relation2">Relation2: </a>It is often the case that a system administrator will need to schedule maintenance for a server. As part of the scheduling process, s/he will need to know what other systems might be impacted. For a given configuration item (named 'super-server'), list all dependent configuration items.</li>
+                    <li><a href="relation.php?title=Relation3">Relation 3:</a> If an event occurs impacting the availability of a system, a system administrator will want to know what has changed both on that system and on other systems that support his/her system. For a given configuration item (named 'down-app'), list all configuration items that 'down-app' depends upon along with the last time they were changed and who the system administrator is for those configuration items.
+                    </li>
+                    <li><a href="relation.php?title=Relation4"> Relation 4: </a>List configuration items by type.</li>
+                    <li><a href="relation.php?title=Relation5">Relation 5: </a>List the date, configuration item and summary of all recent changes ordered by date.</li>
                </ol>
                <BR>
                <BR>
