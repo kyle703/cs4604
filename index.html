@@ -48,45 +48,20 @@
                <hr>
             </li>
             <li>
-               <B>Ad-hoc Query:</b>
-               <FORM METHOD=POST ACTION="query.php">
-                  <table>
-                     <!-- TEST TOGGLE -->
-                     Confirm you are an admin (leave unchecked if you are a guest):
-                     <input type="checkbox" id="myCheck" onclick="myFunction()">
-                     <p id="text" style="display:none">YOU &#128079;&#127999; ARE &#128079;&#127999; AN &#128079;&#127999; ADMIN!</p>
-                     <script>
-                        function myFunction() {
-                            var checkBox = document.getElementById("myCheck");
-                            var text = document.getElementById("text");
-                            if (checkBox.checked == true) {
-                                text.style.display = "block";
-                                // TODO: ADMIN
-                            } else {
-                                text.style.display = "none";
-                            }
-                        }
-                     </script>
-                     <!-- END TEST -->
-                     <tr>
-                        <td align=right>
-                           <strong>Enter a query:<br></font></strong>
-                        </td>
-                        <td>
-                           <input type=text size=150 maxlength=1000 name="query">
-                        </td>
-                     </tr>
-                     <tr>
-                        <td align=right>
-                           <input type=reset value="Clear">
-                        </td>
-                        <td>
-                           <input type=submit value="Submit">
-                        </td>
-                     </tr>
-                  </table>
-               </FORM>
-            </li>
+               <h2>Ad-hoc Query:</h2>
+			<br>
+			<form class="form-inline" method=post action="adhoc.php">
+			  <div class="form-group">
+				<label for="query">
+				  <strong>Please enter your query here:</strong>
+				</label>
+				&nbsp;
+				<input class="form-control" type=text name="query" id="query">
+				&nbsp;
+				<input class="btn btn-primary" type=reset value="clear">
+				<input class="btn btn-primary" type=submit value="submit">
+			  </div>
+			</form>
             <BR>
             <li>
                <B>Relations:</B>
