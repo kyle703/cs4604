@@ -1,0 +1,97 @@
+-- lists number of entries in all tables
+SELECT schemaname, relname, n_live_tup
+FROM pg_stat_user_tables
+ORDER BY n_live_tup DESC;
+
+    -- list admins and their number of ci items
+SELECT P.name,  count(P.name)
+    FROM administers A, person P
+    WHERE P.pid = A.pid
+    GROUP BY P.name
+
+
+    -- get name of all ci's where dependency 
+    SELECT C2.name 
+    FROM configuration_items C1, configuration_items C2,
+    dependent_on D
+    Where C1.name = 'super server' AND D.super = C1.cid 
+    AND D.child = C2.cid;
+
+
+    -- need all CI's that depend on down-app 
+    -- and report last time changed and sys admin for the ci
+    SELECT P.name, 
+    FROM person P, administers A, 
+    configuration_items C, audit.logged_actions L
+    WHERE C.name = 'down-app' AND 
+
+    --list configuration items by type
+    SELECT * 
+    FROM configuration_items
+    ORDER BY type DESC;
+
+    -- prompt for ci and show everything it depends upon
+    SELECT C2.*
+    FROM configuration_items C1, configuration_items C2,
+    dependent_on D
+    WHERE C1.name = 'P1' AND C1.cid = D.child
+    AND C2.cid = D.super;
+
+    -- prompt from ci and show everything depending on it
+    SELECT C2.*
+    FROM configuration_items C1, configuration_items C2,
+    dependent_on D
+    WHERE C1.name = 'entered name' AND C1.cid = D.super
+    AND C2.cid = D.child;
+
+    -- prompt for ci name/id and admin name/id
+    -- update configuration item to the given admin
+
+    -- pid and cid
+    UPDATE administers
+    SET pid = givenpid
+    WHERE cid = givencid;
+
+    -- admin name and ci name
+    UPDATE administers
+    SET pid = P.pid
+    from person P, configuration_items C
+    where P.name = pname AND C.name = ciname;
+
+    --admin pid and ci name
+    UPDATE administers
+    SET pid = givenpid
+    from person P, configuration_items C
+    where P.pid = givenpid AND C.name = ciname;
+
+    --admin name and cid
+    UPDATE administers
+    SET pid = P.pid
+    from person P, configuration_items C
+    where pname = P.name AND cid = ciname;
+
+
+    -- list the date, configuration item and all recent changes ordered by date
+    SELECT action_tstamp, original_data, new_data
+    from audit.logged_actions
+    where table_name = 'configuration_items'
+    order by action_tstamp DESC;
+
+
+
+    -- all ci's that 'down-app' depends on along with their admin and last modified
+    SELECT dep.name, dep.last_modified, P.name
+    FROM person P, administers A, 
+    (
+     SELECT C2.*
+     FROM configuration_items C1, configuration_items C2,
+     dependent_on D
+     WHERE C1.name = 'P1' AND C1.cid = D.child
+     AND C2.cid = D.super 
+    ) as dep
+    WHERE A.pid = P.pid AND A.cid = dep.cid;
+
+
+
+
+
