@@ -10,6 +10,7 @@
   echo "<h4>Items dependent on {$_REQUEST['config']}</h4>";
   
   $config = $_REQUEST['config'];
+  $config = pg_escape_string($config);
 
   if($_REQUEST['id'] != NULL) {
       //Specify a query for the database.
@@ -35,7 +36,7 @@
   $numberOfFields = pg_num_fields($result);
   
   //Print the table header with the field names.  Use bold font.
-  echo "<table align=\"center\" class=\"table table-striped table-bordered\">";
+  echo "<table border=1 align=\"center\" class=\"table table-striped table-bordered\">";
   echo "<tr>";
     for ($i=0; $i<$numberOfFields; $i++) {
       $fieldName = pg_field_name($result, $i);

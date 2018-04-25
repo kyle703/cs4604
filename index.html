@@ -88,6 +88,32 @@
                 </div>
             </form>
         </div>
+        <br>
+        <div>
+			<form class="form-inline" method=post action="query4.php">
+			  <div class="form-group">
+				<label for="query">
+				  <strong>4. Display all Configurations Items given a type</strong>
+				</label>
+				<br>
+				<select name="type">
+					<option value="virtual server">Virtual Server</option>
+					<option value="load balancer">Load Balancer</option>
+					<option value="physical server">Physical Server</option>
+					<option value="super server">Super Server</option>
+					<option value="Swarm of docker nodes">Docker Swarm</option>
+					<option value="firewall">Firewall</option>
+					<option value="Graduate Research Paper Application">Graduate Research Paper Application</option>
+					<option value="application">Application</option>
+					<option value="storage area network">Storage Area Network</option>
+					<option value="postgres database">
+					Postgres Database</option>
+				  </select>
+				  <br><br>
+				<input class="btn btn-primary" type=submit value="submit">
+			  </div>
+			</form>
+		</div>
         <BR>
         <hr>
         <h2>Ad hoc Query:</h2>

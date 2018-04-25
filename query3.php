@@ -11,6 +11,9 @@
   
   $config = $_REQUEST['config'];
   $admin = $_REQUEST['admin'];
+  
+  $admin = pg_escape_string($admin);
+  $config = pg_escape_string($config);
 
   if($_REQUEST['id'] != NULL) {
 
