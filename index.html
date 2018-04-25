@@ -1,131 +1,121 @@
 <!DOCTYPE html>
 <html>
-   <title>Young Sailors</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-   <style>
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-      font-family: "Raleway", sans-serif
-      }
-   </style>
-   <body class="w3-pale-yellow">
-      <!-- w3-content defines a container for fixed size centered content, 
-         and is wrapped around the whole page content, except for the footer in this example -->
-      <div class="w3-content" style="max-width:1400px">
-         <!-- Header -->
-         <header class="w3-container w3-center w3-padding-32">
+<title>Young Sailors</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-pale-yellow">
+    <div class="w3-content" style="max-width:1400px">
+        <header class="w3-container w3-center w3-padding-32">
             <h1><b>Young Sailors</b></h1>
             <p><span class="w3-tag">Team Members: Randy Liang, Kyle Thompson</span></p>
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-          <link rel="stylesheet" type="text/css" href="css/custom.css">
-          <script src="http://code.jquery.com/jquery.js"></script>
-          <script src="js/bootstrap.js"></script>
-          <script src="js/friends_search.js"></script>
-         </header>
-         <hr>
-         <ul>
-            <li>
-               <B>Queries:</B>
-              
-               <br>
-                  <div>
-                    <form class="form-inline" method=post action="query1.php">
-                      <div class="form-group">
-                        <label for="query">
-                          <strong>1. Prompt for configuration item name/id and show everything that depends upon it.</strong>
-                        </label>
-                        <br>
-                        Configuration Item:<br>
-                        <input class="form-control" type=text name="config" id="config"><br>
-                        <input type="checkbox" name="id" value="id"> Use id number
-                         <br>
-                        <input class="btn btn-primary" type=reset value="clear">
-                        <input class="btn btn-primary" type=submit value="submit">
-                      </div>
-                    </form>
-                  </div>
-                  <br>
-                 <div>
-                    <form class="form-inline" method=post action="query2.php">
-                      <div class="form-group">
-                        <label for="query">
-                          <strong>2. Prompt for configuration item name/id and show everything that it depends upon.</strong>
-                        </label>
-                        <br>
-                        Configuration Item:<br>
-                        <input class="form-control" type=text name="config" id="config"><br>
-                        <input type="checkbox" name="id" value="id"> Use id number
-                         <br>
-                        <input class="btn btn-primary" type=reset value="clear">
-                        <input class="btn btn-primary" type=submit value="submit">
-                      </div>
-                    </form>
-                  </div>
-                  <br>
-                  <div>
-                    <form class="form-inline" method=post action="query3.php">
-                      <div class="form-group">
-                        <label for="query">
-                          <strong>3. Prompt for configuration item name/id and system administrator name/id and update the configuration item to set its system administrator to the one given.</strong>
-                        </label>
-                        <br>
-                        Configuration Item:<br>
-                        <input class="form-control" type=text name="config" id="config"><br>
-                        <input type="checkbox" name="id" value="id"> Use id number
-                         <br>
-                         Admin identification:<br>
-                        <input class="form-control" type=text name="admin" id="admin"><br>
-                        <input type="checkbox" name="admin-id" value="admin-id"> Use id number
-                         <br><br>
-                        <input class="btn btn-primary" type=reset value="clear">
-                        <input class="btn btn-primary" type=submit value="update">
-                      </div>
-                    </form>
-                  </div>
-               </ul>
-               <BR>
-               <hr>
-            </li>
-            <li>
-               <h2>Ad-hoc Query:</h2>
-            <br>
-            <form class="form-inline" method=post action="adhoc.php">
-              <div class="form-group">
+            <link rel="stylesheet" type="text/css" href="css/custom.css">
+            <script src="http://code.jquery.com/jquery.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <script src="js/friends_search.js"></script>
+        </header>
+        <hr>
+        <h2>Queries:</h2>
+        <div>
+            <form class="form-inline" method=post action="query1.php">
+                <div class="form-group">
+                    <label for="query">
+                        <strong>1. Prompt for configuration item name/id and show everything that depends upon it.</strong>
+                    </label>
+                    <br> Configuration Item:
+                    <br>
+                    <input class="form-control" type=text name="config" id="config">
+                    <br>
+                    <input type="checkbox" name="id" value="id"> Use id number
+                    <br>
+                    <input class="btn btn-primary" type=reset value="clear">
+                    <input class="btn btn-primary" type=submit value="submit">
+                </div>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form class="form-inline" method=post action="query2.php">
+                <div class="form-group">
+                    <label for="query">
+                        <strong>2. Prompt for configuration item name/id and show everything that it depends upon.</strong>
+                    </label>
+                    <br> Configuration Item:
+                    <br>
+                    <input class="form-control" type=text name="config" id="config">
+                    <br>
+                    <input type="checkbox" name="id" value="id"> Use id number
+                    <br>
+                    <input class="btn btn-primary" type=reset value="clear">
+                    <input class="btn btn-primary" type=submit value="submit">
+                </div>
+            </form>
+        </div>
+        <br>
+        <div>
+            <form class="form-inline" method=post action="query3.php">
+                <div class="form-group">
+                    <label for="query">
+                        <strong>3. Prompt for configuration item name/id and system administrator name/id and update the configuration item to set its system administrator to the one given.</strong>
+                    </label>
+                    <br> Configuration Item:
+                    <br>
+                    <input class="form-control" type=text name="config" id="config">
+                    <br>
+                    <input type="checkbox" name="id" value="id"> Use id number
+                    <br>
+                    <br> Admin identification:
+                    <br>
+                    <input class="form-control" type=text name="admin" id="admin">
+                    <br>
+                    <input type="checkbox" name="admin-id" value="admin-id"> Use id number
+                    <br>
+                    <input class="btn btn-primary" type=reset value="clear">
+                    <input class="btn btn-primary" type=submit value="update">
+                </div>
+            </form>
+        </div>
+        <BR>
+        <hr>
+        <h2>Ad hoc Query:</h2>
+        <form class="form-inline" method=post action="adhoc.php">
+            <div class="form-group">
                 <label for="query">
-                  <strong>Please enter your query here:</strong>
+                    <strong>Please enter your query here:</strong>
                 </label>
                 &nbsp;
-                <input class="form-control" type=text name="query" id="query">
-                &nbsp;
+                <input class="form-control" type=text name="query" id="query"> &nbsp;
                 <input class="btn btn-primary" type=reset value="clear">
                 <input class="btn btn-primary" type=submit value="submit">
-              </div>
-            </form>
-            <br>
-            <li>
-               <B>Relations:</B>
-               
-               <BR>
-               <ol>
-                   <li><a href="relation.php?title=Relation1">Relation1:</a> List the system administrators and the number of configuration items they administer.</li>
-                    <li><a href="relation.php?title=Relation2">Relation2: </a>It is often the case that a system administrator will need to schedule maintenance for a server. As part of the scheduling process, s/he will need to know what other systems might be impacted. For a given configuration item (named 'super-server'), list all dependent configuration items.</li>
-                    <li><a href="relation.php?title=Relation3">Relation 3:</a> If an event occurs impacting the availability of a system, a system administrator will want to know what has changed both on that system and on other systems that support his/her system. For a given configuration item (named 'down-app'), list all configuration items that 'down-app' depends upon along with the last time they were changed and who the system administrator is for those configuration items.
-                    </li>
-                    <li><a href="relation.php?title=Relation4"> Relation 4: </a>List configuration items by type.</li>
-                    <li><a href="relation.php?title=Relation5">Relation 5: </a>List the date, configuration item and summary of all recent changes ordered by date.</li>
-               </ol>
-               <BR>
-               <BR>
-               <hr>
-            </li>
-         </ul>
-      </div>
-   </body>
+            </div>
+        </form>
+        <br>
+        <hr>
+        <h2>Relations:</h2>
+            <strong><a href="relation.php?title=Relation1">Relation 1:</a> List the system administrators and the number of configuration items they administer.</strong><br>
+            <strong><a href="relation.php?title=Relation2">Relation 2: </a>It is often the case that a system administrator will need to schedule maintenance for a server. As part of the scheduling process, s/he will need to know what other systems might be impacted. For a given configuration item (named 'super-server'), list all dependent configuration items.</strong><br>
+            <strong><a href="relation.php?title=Relation3">Relation 3:</a> If an event occurs impacting the availability of a system, a system administrator will want to know what has changed both on that system and on other systems that support his/her system. For a given configuration item (named 'down-app'), list all configuration items that 'down-app' depends upon along with the last time they were changed and who the system administrator is for those configuration items.
+            </strong><br>
+            <strong><a href="relation.php?title=Relation4">Relation 4: </a>List configuration items by type.</strong><br>
+            <strong><a href="relation.php?title=Relation5">Relation 5: </a>List the date, configuration item and summary of all recent changes ordered by date.</strong>
+        <BR>
+        <BR>
+        <hr>
+        </ul>
+    </div>
+</body>
+
 </html>
