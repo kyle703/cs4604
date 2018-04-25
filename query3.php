@@ -68,7 +68,7 @@
   echo "</tr>";
   
   //Then, print all the results of the query.
-  while($array = pg_fetch_array($result, NULL, PGSQL_ASSOC)) {
+  while($array = pg_fetch_array($result, NULL, PGSQL_NUM)) {
     echo '<tr>';
     foreach($array as $elem) {
       echo '<td>'.$elem.'</td>';

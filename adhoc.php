@@ -17,7 +17,7 @@
   $numberOfFields = pg_num_fields($result);
   
   //Print the table header with the field names.  Use bold font.
-  echo "<table align=\"center\" class=\"table table-striped table-bordered\">";
+  echo "<table border=1 align=\"center\" class=\"table table-striped table-bordered\">";
   echo "<tr>";
     for ($i=0; $i<$numberOfFields; $i++) {
       $fieldName = pg_field_name($result, $i);
@@ -27,7 +27,7 @@
   echo "</tr>";
   
   //Then, print all the results of the query.
-  while($array = pg_fetch_array($result, NULL, PGSQL_ASSOC)) {
+  while($array = pg_fetch_array($result, NULL, PGSQL_NUM)) {
     echo '<tr>';
     foreach($array as $elem) {
       echo '<td>'.$elem.'</td>';
