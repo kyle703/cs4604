@@ -5,9 +5,9 @@
     $password = "password=123456";
   $dbconnect = pg_connect ("$database $user $password");
 
-  $title = "Query 1";
-  echo "<h1>Query 1</h1>";
-  echo "<h4>Items dependent on {$_REQUEST['config']}</h4>";
+  $title = "Query 2";
+  echo "<h1>Query 2</h1>";
+  echo "<h3>Items {$_REQUEST['config']} is dependent on</h3>";
   
   $config = $_REQUEST['config'];
 
@@ -16,16 +16,16 @@
   $query = "SELECT C2.*
             FROM configuration_items C1, configuration_items C2,
             dependent_on D
-            WHERE C1.cid = '{$config}' AND C1.cid = D.super
-            AND C2.cid = D.child;";
+            WHERE C1.cid = '{$config}' AND C1.cid = D.child
+            AND C2.cid = D.super;";
   
   } else {
           //Specify a query for the database.
-    $query = "SELECT C2.*
+  $query = "SELECT C2.*
             FROM configuration_items C1, configuration_items C2,
             dependent_on D
-            WHERE C1.name = '{$config}' AND C1.cid = D.super
-            AND C2.cid = D.child;";
+            WHERE C1.name = '{$config}' AND C1.cid = D.child
+            AND C2.cid = D.super;";
   }
   
   //Get the result of the query
