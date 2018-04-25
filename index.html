@@ -34,13 +34,62 @@
             <li>
                <B>Queries:</B>
               
-               <BR>
-               <ol>
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query 1: </a>Prompt for configuration item name/id and show everything that depends upon it.</li>
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query 2: </a>Prompt for configuration item name/id and show everything that it depends upon.</li>
-                  
-                  <li><a href="http://cs4604.cs.vt.edu/~ysirui/hello.html">Query 4: </a>Prompt for configuration item name/id and system administrator name/id and update the configuration item to set its system administrator to the one given.</li>
-               </ol>
+               <br>
+                  <div>
+                    <form class="form-inline" method=post action="query1.php">
+                      <div class="form-group">
+                        <label for="query">
+                          <strong>1. Prompt for configuration item name/id and show everything that depends upon it.</strong>
+                        </label>
+                        <br>
+                        Configuration Item:<br>
+                        <input class="form-control" type=text name="config" id="config"><br>
+                        <input type="checkbox" name="id" value="id"> Use id number
+                         <br>
+                        <input class="btn btn-primary" type=reset value="clear">
+                        <input class="btn btn-primary" type=submit value="submit">
+                      </div>
+                    </form>
+                  </div>
+                  <br>
+                 <div>
+                    <form class="form-inline" method=post action="query2.php">
+                      <div class="form-group">
+                        <label for="query">
+                          <strong>2. Prompt for configuration item name/id and show everything that it depends upon.</strong>
+                        </label>
+                        <br>
+                        Configuration Item:<br>
+                        <input class="form-control" type=text name="config" id="config"><br>
+                        <input type="checkbox" name="id" value="id"> Use id number
+                         <br>
+                        <input class="btn btn-primary" type=reset value="clear">
+                        <input class="btn btn-primary" type=submit value="submit">
+                      </div>
+                    </form>
+                  </div>
+                  <br>
+                  <div>
+                    <form class="form-inline" method=post action="query3.php">
+                      <div class="form-group">
+                        <label for="query">
+                          <strong>3. Prompt for configuration item name/id and system administrator name/id and update the configuration item to set its system administrator to the one given.</strong>
+                        </label>
+                        <br>
+                        Configuration Item:<br>
+                        <input class="form-control" type=text name="config" id="config"><br>
+                        <input type="checkbox" name="id" value="id"> Use id number
+                         <br>
+                         Admin identification:<br>
+                        <input class="form-control" type=text name="admin" id="admin"><br>
+                        <input type="checkbox" name="admin-id" value="admin-id"> Use id number
+                         <br><br>
+                        <input class="btn btn-primary" type=reset value="clear">
+                        <input class="btn btn-primary" type=submit value="update">
+                      </div>
+                    </form>
+                  </div>
+               </ul>
                <BR>
                <hr>
             </li>
@@ -59,11 +108,10 @@
                 <input class="btn btn-primary" type=submit value="submit">
               </div>
             </form>
-            <BR>
+            <br>
             <li>
                <B>Relations:</B>
-               <BR> In the following, substitute actual names for Relation1, Relation2 etc. Have entries for five relations in your project, ideally representing different aspects of the database. Clicking a link on a relation name should execute an SQL query and list 10-20 tuples in that particular relation (of course, they don't work below). Your output should be presented on a separate web page in a neat orderly fashion, one row for each tuple and where columns are evident. Ensure that all columns have their headers listed and their types are clear (i.e., state which is an int and which is a char and so on).
-               <BR>
+               
                <BR>
                <ol>
                    <li><a href="relation.php?title=Relation1">Relation1:</a> List the system administrators and the number of configuration items they administer.</li>
