@@ -22,7 +22,7 @@
             $query = "SELECT C2.*
                         FROM configuration_items C1, configuration_items C2,
                         dependent_on D
-                        WHERE C1.name = 'super-server' AND C1.cid = D.super
+                        WHERE C1.name = 'super server' AND C1.cid = D.super
                         AND C2.cid = D.child;";
             break;
         case 'Relation3':
@@ -53,7 +53,9 @@
         default:
             break;
     }
+    
     if ($query != '') {
+		echo "<h3>{$query}</h3>";
         //Get the result of the query
         $result = pg_query($dbconnect, $query);
         //And record the number of fields from the query.
