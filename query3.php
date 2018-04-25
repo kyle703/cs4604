@@ -14,12 +14,13 @@
 
   if($_REQUEST['id'] != NULL) {
 
-    if($_REQUEST['admin_id'] != NULL) {
+    if($_REQUEST['admin-id'] != NULL) {
        //-- admin id and ci id
         $query = "UPDATE administers
-                SET pid = '{$admin}'
+                SET pid = P.pid
                 from Person P, configuration_items C                     
-                WHERE administers.cid = '{$config}';";
+                WHERE administers.cid = '{$config}'
+                AND P.pid = '{$admin}';";
     } else {
         //-- admin name and ci id
         $query = "UPDATE administers
@@ -30,12 +31,13 @@
     }
   
   } else {
-      if($_REQUEST['admin_id'] != NULL) {
+      if($_REQUEST['admin-id'] != NULL) {
           //-- admin id and ci name
       $query = "UPDATE administers
-                SET pid = '{$admin}'
-                from Person P, configuration_items C                     
-                WHERE C.cid = administers.cid and C.name = '{$config}';";
+                SET pid = P.pid
+                from configuration_items C, Person P                     
+                WHERE C.cid = administers.cid and C.name = '{$config}'
+                AND P.pid = '{$admin}';";
     } else {
         //-- admin name and ci name
         $query = "UPDATE administers
